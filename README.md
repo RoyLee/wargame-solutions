@@ -2,7 +2,7 @@
 
 This repository will hold *succinctly* answered solutions for smart contract wargames used for learning purposes found online:
 ### [Ethernaut](https://ethernaut.openzeppelin.com)
-### [Security Innovation](blockchain-ctf.securityinnovation.com)
+### [Security Innovation](https://blockchain-ctf.securityinnovation.com)
 
 
 <br>
