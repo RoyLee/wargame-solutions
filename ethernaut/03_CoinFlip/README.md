@@ -1,4 +1,4 @@
-# CoinFlip
+# Coin Flip
 
 # Problem Statement
 ```

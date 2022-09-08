@@ -1,4 +1,4 @@
-# HelloEthernaut
+# Hello Ethernaut
 
 # Problem Statement
 ```

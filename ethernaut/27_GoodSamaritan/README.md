@@ -1,4 +1,4 @@
-# GoodSamaritan
+# Good Samaritan
 
 # Problem Statement
 ```

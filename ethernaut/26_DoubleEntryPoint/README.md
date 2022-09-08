@@ -1,4 +1,4 @@
-# DoubleEntryPoint
+# Double Entry Point
 
 # Problem Statement
 ```
