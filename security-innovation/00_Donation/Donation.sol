@@ -2,6 +2,29 @@ pragma solidity 0.4.24;
 
 import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 
+contract Donation is CtfFramework{
+
+    using SafeMath for uint256;
+
+    uint256 public funds;
+
+    constructor(address _ctfLauncher, address _player) public payable
+        CtfFramework(_ctfLauncher, _player)
+    {
+        funds = funds.add(msg.value);
+    }
+    
+    function() external payable ctf{
+        funds = funds.add(msg.value);
+    }
+
+    function withdrawDonationsFromTheSuckersWhoFellForIt() external ctf{
+        msg.sender.transfer(funds);
+        funds = 0;
+    }
+
+}
+
 contract CtfFramework{
     
     event Transaction(address indexed player);
@@ -24,29 +47,6 @@ contract CtfFramework{
     // Add an authorized contract address to play this game
     function ctf_challenge_add_authorized_sender(address _addr) external ctf{
         authorizedToPlay[_addr] = true;
-    }
-
-}
-
-contract Donation is CtfFramework{
-
-    using SafeMath for uint256;
-
-    uint256 public funds;
-
-    constructor(address _ctfLauncher, address _player) public payable
-        CtfFramework(_ctfLauncher, _player)
-    {
-        funds = funds.add(msg.value);
-    }
-    
-    function() external payable ctf{
-        funds = funds.add(msg.value);
-    }
-
-    function withdrawDonationsFromTheSuckersWhoFellForIt() external ctf{
-        msg.sender.transfer(funds);
-        funds = 0;
     }
 
 }
