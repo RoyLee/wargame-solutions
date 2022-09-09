@@ -1,7 +1,6 @@
 # Lock Box
 
 # Problem Statement
-### Description
 ```
 Unlock the Safe
 Just enter the correct pin
@@ -33,8 +32,19 @@ console.log(parseInt(result)); // need to parse to int as the value is stored in
 ```
 That should return the code so all we need to do now is to call the `Lockbox1` `unlock` function with the it. The website has an interface where you can put in the code but we are using ethersjs here:
 ```
+// using ethers.js
 const eoa = // Your address
-const abi = // Lockbox abi
+const abi = [
+  {
+    "constant": false,
+    "inputs": [{ "name": "_pin", "type": "uint256" }],
+    "name": "unlock",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+];
 const code = // Code from above
 const contract = new ethers.Contract(contractAddress, abi, eoa);
 const tx = await contract.unlock(8500);

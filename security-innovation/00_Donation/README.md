@@ -1,7 +1,6 @@
 # Donation
 
 # Problem Statement
-### Description
 ```
 Donate to Bob Smith!
 Bob Smith is a name you can trust! He stands for your values! He cares about what you care about!
@@ -23,6 +22,21 @@ msg.sender.transfer(funds);
 ```
 Bingo. This will send the entirety of the available ethers stored in the contract to the caller of the function. So using your favorite web3/ethers library call the method:
 ```
+// using ethers.js
+const contractAddress = // Donation contract address
+const eoa = // Your address
+const abi = [
+  {
+    "constant": false,
+    "inputs": [],
+    "name": "withdrawDonationsFromTheSuckersWhoFellForIt",
+    "outputs": [],
+    "payable": false,
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+];
+const contract = new ethers.Contract(contractAddress, abi, eoa);
 await contract.withdrawDonationsFromTheSuckersWhoFellForIt();
 ```
 
