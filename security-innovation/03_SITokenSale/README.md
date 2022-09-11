@@ -31,6 +31,7 @@ Decimals: 18
 # Solution
 Lets check our balance:
 ```
+// using ethers.js
 const contractAddress = // SITokenSale contract address
 const abi = [
   {
